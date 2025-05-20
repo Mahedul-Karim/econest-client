@@ -11,17 +11,22 @@ const Provider = ({ children }) => {
     if (isDarkMode) {
       document.documentElement.classList.remove("dark");
       document.documentElement.classList.add("light");
+      setIsDarkMode(false);
     } else {
       document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
+      setIsDarkMode(true);
     }
   };
 
   useEffect(() => {
-    toggleDarkMode();
-  }, [isDarkMode]);
+    if (isDarkMode) {
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
 
-  return <Context value={{ isDarkMode, setIsDarkMode }}>{children}</Context>;
+  return <Context value={{ toggleDarkMode }}>{children}</Context>;
 };
 
 export const useStore = () => {
