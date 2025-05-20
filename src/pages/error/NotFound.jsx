@@ -1,6 +1,8 @@
 import Container from "@/components/common/Container";
 import React from "react";
 import { Link, useRouteError } from "react-router";
+import Lottie from "lottie-react";
+import errorAnimation from "./lottie.json";
 
 const NotFound = () => {
   const error = useRouteError();
@@ -8,7 +10,7 @@ const NotFound = () => {
   return (
     <Container className="py-10">
       <div className="flex items-center justify-center">
-        <img src="/error.png" alt="" className="max-h-[350px]" />
+        <Lottie animationData={errorAnimation} className="size-[200px] xs:size-[300px]" />
       </div>
       <p className="my-4 text-center text-muted whitespace-pre-wrap">
         {error?.message ||
