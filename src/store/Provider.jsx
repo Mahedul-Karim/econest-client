@@ -6,6 +6,7 @@ const Provider = ({ children }) => {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   const [isDarkMode, setIsDarkMode] = useState(defaultDark);
+  const [user,setUser] = useState(null);
 
   const toggleDarkMode = () => {
     if (isDarkMode) {
@@ -26,7 +27,7 @@ const Provider = ({ children }) => {
     }
   }, []);
 
-  return <Context value={{ toggleDarkMode }}>{children}</Context>;
+  return <Context value={{ toggleDarkMode,isDarkMode,user,setUser }}>{children}</Context>;
 };
 
 export const useStore = () => {
