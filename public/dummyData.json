@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Lena Greenfield",
+    "age": 34,
+    "gender": "Female",
+    "status": "active",
+    "experiences": ["Urban gardening", "Herbs", "Composting"],
+    "image": "https://i.ibb.co/WNChyfbj/gardener-1.jpg",
+    "totalSharedTips": 12
+  },
+  {
+    "name": "Marcus Clay",
+    "age": 42,
+    "gender": "Male",
+    "status": "active",
+    "experiences": ["Soil preparation", "Vegetables", "Seasonal crops"],
+    "image": "https://i.ibb.co/yFxLRvLX/gardener-2.jpg",
+    "totalSharedTips": 19
+  },
+  {
+    "name": "Priya Desai",
+    "age": 29,
+    "gender": "Female",
+    "status": "active",
+    "experiences": ["Vertical gardening", "Succulents", "Pest control"],
+    "image": "https://i.ibb.co/0pqQXwns/gardener-3.jpg",
+    "totalSharedTips": 9
+  },
+  {
+    "name": "James Holloway",
+    "age": 50,
+    "gender": "Male",
+    "status": "active",
+    "experiences": ["Fruit trees", "Soil biology", "Mulching"],
+    "image": "https://i.ibb.co/zL2QPXh/gardener-4.jpg",
+    "totalSharedTips": 25
+  },
+  {
+    "name": "Maria Gonzales",
+    "age": 37,
+    "gender": "Female",
+    "status": "active",
+    "experiences": ["Indoor plants", "Ornamentals", "Garden planning"],
+    "image": "https://i.ibb.co/ycBdXfHm/gardener-5.jpg",
+    "totalSharedTips": 14
+  },
+  {
+    "name": "Noah Kim",
+    "age": 31,
+    "gender": "Male",
+    "status": "active",
+    "experiences": ["Container gardening", "Native plants", "Irrigation"],
+    "image": "https://i.ibb.co/Kzj52Nwd/gardener-6.jpg",
+    "totalSharedTips": 17
+  },
+  {
+    "name": "Eleanor Brooks",
+    "age": 45,
+    "gender": "Female",
+    "status": "inactive",
+    "experiences": ["Edible landscaping", "Composting", "Aquaponics"],
+    "image": "https://i.ibb.co/BHxrjHg7/gardener-7.jpg",
+    "totalSharedTips": 7
+  },
+  {
+    "name": "Daniel Okoye",
+    "age": 39,
+    "gender": "Male",
+    "status": "inactive",
+    "experiences": ["Greenhouse gardening", "Pest management", "Soil testing"],
+    "image": "https://i.ibb.co/wZK7RwbV/gardener-8.jpg",
+    "totalSharedTips": 5
+  },
+  {
+    "name": "Sophia Lin",
+    "age": 27,
+    "gender": "Female",
+    "status": "inactive",
+    "experiences": ["Hydroponics", "Herbs", "Plant propagation"],
+    "image": "https://i.ibb.co/CpJc0L5m/gardener-9.jpg",
+    "totalSharedTips": 3
+  },
+  {
+    "name": "Ethan Rivera",
+    "age": 36,
+    "gender": "Male",
+    "status": "inactive",
+    "experiences": ["Lawn care", "Shrubs", "Composting"],
+    "image": "https://i.ibb.co/pvDmbTht/gardener-10.jpg",
+    "totalSharedTips": 4
+  }
+]

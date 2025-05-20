@@ -2,6 +2,7 @@ import Root from "@/layout/Root";
 import NotFound from "@/pages/error/NotFound";
 import Home from "@/pages/home/Home";
 import { createBrowserRouter } from "react-router";
+import HydrateFallback from "./HydrateFallback";
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +13,8 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+        loader: () => fetch("/dummyData.json"),
+        hydrateFallbackElement: <HydrateFallback />,
       },
     ],
   },
