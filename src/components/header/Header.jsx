@@ -6,6 +6,7 @@ import NavActions from "./nav/NavActions";
 import MobileNav from "./nav/MobileNav";
 import { useStore } from "@/store/Provider";
 import Image from "../common/user/Image";
+import DarkMode from "../common/buttons/DarkMode";
 
 const Header = () => {
   const { user } = useStore();
@@ -19,8 +20,9 @@ const Header = () => {
           <NavActions />
         </div>
         <div className="flex lg:hidden gap-4 items-center">
-          <MobileNav />
           {user && <Image />}
+          <DarkMode />
+          <MobileNav />
         </div>
       </Container>
     </header>

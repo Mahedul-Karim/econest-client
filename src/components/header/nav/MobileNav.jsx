@@ -10,11 +10,14 @@ import {
 } from "@/components/ui/sheet";
 import { AlignCenter } from "lucide-react";
 import Logo from "@/components/common/Logo";
-import DarkMode from "@/components/common/buttons/DarkMode";
 import Auth from "@/components/common/buttons/Auth";
 import Nav from "./Nav";
+import { useStore } from "@/store/Provider";
 
 const MobileNav = () => {
+
+  const { user } = useStore();
+
   return (
     <div className="block lg:hidden">
       <Sheet>
@@ -37,8 +40,7 @@ const MobileNav = () => {
             <Nav closeOnClick />
           </div>
           <SheetFooter className={"flex-row items-center gap-4 "}>
-            <DarkMode />
-            <Auth closeOnClick />
+            {!user && <Auth closeOnClick />}
           </SheetFooter>
         </SheetContent>
       </Sheet>

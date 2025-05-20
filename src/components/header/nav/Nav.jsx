@@ -25,8 +25,8 @@ const Nav = ({ closeOnClick = false }) => {
                 to={nav.to}
                 className={`px-3 py-2 w-full justify-center lg:w-auto relative hover:text-secondary dark:hover:text-primary text-[15px] lg:after:content-[''] lg:after:absolute lg:after:bottom-0 lg:after:left-1/2 lg:after:-translate-x-1/2 lg:after:h-[2px] lg:after:bg-primary lg:after:transition-all lg:dark:after:bg-secondary lg:after:duration-300 hover:after:w-full inline-flex rounded-md  ${
                   path === nav.to
-                    ? "text-white lg:text-secondary dark:text-white lg:dark:text-primary bg-primary lg:bg-transparent lg:after:w-full"
-                    : "text-dark/90 after:w-0"
+                    ? "text-primary lg:text-secondary dark:text-primary lg:dark:text-primary border-primary border lg:border-none bg-transparent lg:after:w-full"
+                    : "text-dark/90 after:w-0 border-none"
                 } `}
               >
                 {nav.label}
