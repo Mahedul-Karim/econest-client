@@ -4,8 +4,12 @@ import Logo from "../common/Logo";
 import Nav from "./nav/Nav";
 import NavActions from "./nav/NavActions";
 import MobileNav from "./nav/MobileNav";
+import { useStore } from "@/store/Provider";
+import Image from "../common/user/Image";
 
 const Header = () => {
+  const { user } = useStore();
+
   return (
     <header className="bg-background dark:bg-foreground">
       <Container className="py-2 flex items-center justify-between">
@@ -14,7 +18,10 @@ const Header = () => {
           <Nav />
           <NavActions />
         </div>
-        <MobileNav />
+        <div className="flex lg:hidden gap-4 items-center">
+          <MobileNav />
+          {user && <Image />}
+        </div>
       </Container>
     </header>
   );
