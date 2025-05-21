@@ -5,6 +5,7 @@ import { createBrowserRouter } from "react-router";
 import HydrateFallback from "./HydrateFallback";
 import Logins from "@/pages/auth/Logins";
 import SignUp from "@/pages/auth/SignUp";
+import { BASE_URL } from "@/lib/constants";
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +16,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        loader: () => fetch("/dummyData.json"),
+        loader: () => fetch(`${BASE_URL}/gardeners/featured`),
         hydrateFallbackElement: <HydrateFallback />,
       },
       {

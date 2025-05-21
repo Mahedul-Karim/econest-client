@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Container from "../common/Container";
 import Title from "../common/Title";
-import { toast } from "sonner";
 import TipsCard from "../common/tips/TipsCard";
 import { Fade } from "react-awesome-reveal";
+import useServer from "@/hooks/useServer";
+import { toast } from "sonner";
 
 const TrendingTips = () => {
   const [tips, setTips] = useState([]);
 
-  useEffect(() => {
-    const fetchTips = async () => {
-      const res = await fetch("/tipsData.json");
-      const data = await res.json();
+  const { callFetch } = useServer();
 
-      setTips(data);
-    };
-    fetchTips().catch((err) => toast.error(err.message));
+  useEffect(() => {
+    callFetch(`tips/featured`)
+      .then((data) => setTips(data?.tips))
+      .catch((err) => toast.error(err.message));
   }, []);
 
   return (
@@ -27,6 +26,7 @@ const TrendingTips = () => {
             tips?.map((tip, i) => (
               <TipsCard
                 key={i}
+                id={tip._id}
                 title={tip.title}
                 topic={tip.topic}
                 difficulty={tip.difficulty}

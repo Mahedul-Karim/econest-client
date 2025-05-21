@@ -1,21 +1,21 @@
 import React from "react";
-import {
-  Card,
-  CardContent
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { difficultyColor } from "@/lib/data";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router";
 
-//h-140
 const TipsCard = ({
   title,
   topic,
   difficulty,
   description,
   image,
-  category
+  category,
+  id,
 }) => {
+  const navigate = useNavigate();
+
   return (
     <Card className="border-gray-200 dark:border-border bg-background dark:bg-foreground shadow-none py-4">
       <CardContent className="flex-col sm:flex-row gap-4 flex sm:items-center px-4">
@@ -44,9 +44,16 @@ const TipsCard = ({
             </Badge>
           </div>
           <p className="text-muted line-clamp-2 text-sm">{description}</p>
-          <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white dark:bg-transparent dark:hover:bg-primary dark:border-primary" >View Details</Button>
+          <Button
+            variant="outline"
+            className="border-primary text-primary hover:bg-primary hover:text-white dark:bg-transparent dark:hover:bg-primary dark:border-primary"
+            onClick={() => {
+              navigate(`/tip/${id}`);
+            }}
+          >
+            View Details
+          </Button>
         </div>
-        
       </CardContent>
     </Card>
   );

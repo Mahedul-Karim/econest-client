@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
@@ -10,11 +10,98 @@ import {
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import {
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  updateProfile,
+} from "firebase/auth";
+import useServer from "@/hooks/useServer";
+import { toast } from "sonner";
+import { isValidPassword } from "@/lib/utils";
+import { auth, googleProvider } from "@/config/firebase.config";
 
 const SignupForm = () => {
-  const handleForm = (e) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [photoUrl, setPhotoUrl] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const { callFetch } = useServer();
+
+  const navigate = useNavigate();
+
+  const googleSignIn = async () => {
+    try {
+      const currentUser = await signInWithPopup(auth, googleProvider);
+
+      const email = currentUser?.user?.providerData?.[0]?.email;
+
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      };
+
+      await callFetch("user", options);
+
+      toast.success("Account creation successfull!");
+
+      navigate("/");
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
+  const handleForm = async (e) => {
     e.preventDefault();
+
+    if (!name || !email || !password || !photoUrl) {
+      return toast.error("All fields are required!");
+    }
+
+    if (!isValidPassword(password)) {
+      return toast.error(
+        "The password should be at least 8 characters and include 1 uppercase, 1 lowercase, and a special character."
+      );
+    }
+
+    try {
+      setIsLoading(true);
+
+      const newUser = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      await updateProfile(newUser.user, {
+        displayName: name,
+        photoURL: photoUrl,
+      });
+
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      };
+
+      await callFetch("user", options);
+
+      toast.success("Account creation successfull!");
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setIsLoading(false);
+    }
+
+    navigate("/");
   };
 
   return (
@@ -33,6 +120,9 @@ const SignupForm = () => {
               placeholder="Your Name"
               type="text"
               className={"bg-background dark:bg-background h-10"}
+              disabled={isLoading}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="space-y-2">
@@ -41,6 +131,9 @@ const SignupForm = () => {
               placeholder="Email Address"
               type="email"
               className={"bg-background dark:bg-background h-10"}
+              disabled={isLoading}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="space-y-2">
@@ -49,6 +142,9 @@ const SignupForm = () => {
               placeholder="Your image link"
               type="text"
               className={"bg-background dark:bg-background h-10"}
+              disabled={isLoading}
+              value={photoUrl}
+              onChange={(e) => setPhotoUrl(e.target.value)}
             />
           </div>
           <div className="space-y-2">
@@ -57,9 +153,14 @@ const SignupForm = () => {
               placeholder="Your password"
               type="password"
               className={"bg-background dark:bg-background h-10"}
+              disabled={isLoading}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <Button className="w-full h-10">Sign Up</Button>
+          <Button className="w-full h-10" disabled={isLoading}>
+            Sign Up
+          </Button>
         </form>
       </CardContent>
       <CardFooter className="flex-col">
@@ -72,6 +173,7 @@ const SignupForm = () => {
           <Button
             variant="outline"
             className="w-full flex items-center gap-2 text-muted border-border hover:bg-muted/10"
+            onClick={googleSignIn}
           >
             <img src="/assets/google.svg" alt="" className="size-5" />
             Google

@@ -14,8 +14,8 @@ const FeaturedGardeners = () => {
         <Container className="py-8 md:py-12">
           <Title text={"Featured Gardeners"} highlight={"Gardeners"} />
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 mt-6">
-            {data?.length > 0 &&
-              data?.map((card, i) => (
+            {data?.gardeners.length > 0 &&
+              data?.gardeners?.map((card, i) => (
                 <GardenersCard
                   key={i}
                   name={card?.name}
