@@ -45,7 +45,6 @@ const LoginForm = () => {
       toast.success("Logged in successfully!");
       navigate("/");
     } catch (error) {
-      console.log(error.code);
 
       if(error.code === 'auth/invalid-credential'){
         return toast.error('Invalid credentials!')

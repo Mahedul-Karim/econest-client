@@ -10,8 +10,13 @@ export const NAV_LINKS = [
     isPrivate: false,
   },
   {
+    label: "Browse Tips",
+    to: "/browse-tips",
+    isPrivate: false,
+  },
+  {
     label: "Share a Garden Tip",
-    to: "/garden-tip",
+    to: "/share-tip",
     isPrivate: true,
   },
   {
