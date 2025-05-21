@@ -30,7 +30,7 @@ const Gardeners = () => {
   }, []);
 
   return (
-    <main className="bg-foreground dark:bg-background">
+    <main className="bg-foreground">
       <Container className="py-8 md:py-16">
         {isLoading && <HydrateFallback />}
         {!isLoading && gardeners?.length > 0 && (
