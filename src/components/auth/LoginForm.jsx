@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
@@ -10,11 +10,51 @@ import {
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, googleProvider } from "@/config/firebase.config";
+import { toast } from "sonner";
 
 const LoginForm = () => {
-  const handleForm = (e) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate();
+
+  const googleSignIn = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+
+      toast.success("Account creation successfull!");
+
+      navigate("/");
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
+  const handleForm = async (e) => {
     e.preventDefault();
+
+    try {
+      setIsLoading(true);
+
+      await signInWithEmailAndPassword(auth, email, password);
+
+      toast.success("Logged in successfully!");
+      navigate("/");
+    } catch (error) {
+      console.log(error.code);
+
+      if(error.code === 'auth/invalid-credential'){
+        return toast.error('Invalid credentials!')
+      }
+
+      toast.error(error.message);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -36,6 +76,9 @@ const LoginForm = () => {
               placeholder="Email Address"
               type="email"
               className={"bg-background dark:bg-background h-10"}
+              disabled={isLoading}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="space-y-2">
@@ -44,9 +87,14 @@ const LoginForm = () => {
               placeholder="Your password"
               type="password"
               className={"bg-background dark:bg-background h-10"}
+              disabled={isLoading}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <Button className="w-full h-10">Log In</Button>
+          <Button className="w-full h-10" disabled={isLoading}>
+            Log In
+          </Button>
         </form>
       </CardContent>
       <CardFooter className="flex-col">
@@ -59,6 +107,7 @@ const LoginForm = () => {
           <Button
             variant="outline"
             className="w-full flex items-center gap-2 text-muted border-border hover:bg-muted/10"
+            onClick={googleSignIn}
           >
             <img src="/assets/google.svg" alt="" className="size-5" />
             Google

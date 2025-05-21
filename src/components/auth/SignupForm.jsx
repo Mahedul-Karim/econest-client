@@ -95,13 +95,17 @@ const SignupForm = () => {
       await callFetch("user", options);
 
       toast.success("Account creation successfull!");
+
+      navigate("/");
     } catch (error) {
+      if (error.code === "auth/email-already-in-use") {
+        return toast.error("Email already registered!");
+      }
+
       toast.error(error.message);
     } finally {
       setIsLoading(false);
     }
-
-    navigate("/");
   };
 
   return (
