@@ -4,6 +4,7 @@ import Home from "@/pages/home/Home";
 import { createBrowserRouter } from "react-router";
 import HydrateFallback from "./HydrateFallback";
 import Logins from "@/pages/auth/Logins";
+import SignUp from "@/pages/auth/SignUp";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "/login",
         element: <Logins />,
+      },
+      {
+        path: "/sign-up",
+        element: <SignUp />,
       },
     ],
   },
