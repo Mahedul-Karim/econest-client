@@ -2,6 +2,7 @@ import React from "react";
 import Container from "../common/Container";
 import Title from "../common/Title";
 import TestimonialCard from "../testimonials/TestimonialCard";
+import { Fade } from "react-awesome-reveal";
 
 const testimonials = [
   {
@@ -33,22 +34,24 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <section className="mt-6 bg-foreground">
-      <Container className="py-8 md:py-16">
-        <Title text="What our community says" highlight="community" />
-        <div className="mt-10 grid md:grid-cols-3 gap-4">
-          {testimonials?.length > 0 &&
-            testimonials.map((test, i) => (
-              <TestimonialCard
-                key={i}
-                name={test.name}
-                image={test.image}
-                location={test.location}
-                role={test.role}
-                message={test.message}
-              />
-            ))}
-        </div>
-      </Container>
+      <Fade>
+        <Container className="py-8 md:py-16">
+          <Title text="What our community says" highlight="community" />
+          <div className="mt-10 grid md:grid-cols-3 gap-4">
+            {testimonials?.length > 0 &&
+              testimonials.map((test, i) => (
+                <TestimonialCard
+                  key={i}
+                  name={test.name}
+                  image={test.image}
+                  location={test.location}
+                  role={test.role}
+                  message={test.message}
+                />
+              ))}
+          </div>
+        </Container>
+      </Fade>
     </section>
   );
 };
