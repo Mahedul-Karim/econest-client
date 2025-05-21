@@ -38,7 +38,7 @@ const GardenersCard = ({
           </Badge>
         </div>
       </CardHeader>
-      <CardContent className="px-4 xs:px-6 flex flex-col gap-2 flex-1 justify-between">
+      <CardContent className="px-4 xs:px-6 flex flex-col gap-2 flex-1">
         <h3 className="text-lg xs:text-xl font-semibold text-dark leading-tight">{name}</h3>
         <div className="text-xs xs:text-sm text-muted space-y-1">
           <p>

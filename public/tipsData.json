@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Water in the Morning",
+    "topic": "Watering Schedule",
+    "difficulty": "Easy",
+    "description": "Watering your plants early in the morning helps them absorb moisture before the heat of the day sets in. This prevents evaporation and ensures that roots get the hydration they need. It's also a good way to reduce fungal growth since excess moisture on leaves will dry quickly under sunlight.",
+    "image": "https://i.ibb.co/cKbJHCLB/tip-1.jpg",
+    "category": "Plant Care",
+    "availability": "Hidden",
+    "totalLiked": 0
+  },
+  {
+    "title": "Compost Kitchen Scraps",
+    "topic": "Composting",
+    "difficulty": "Easy",
+    "description": "Instead of throwing away vegetable peels, eggshells, and coffee grounds, compost them to enrich your garden soil. Kitchen waste breaks down into nutrient-rich humus that improves soil structure and helps plants thrive without synthetic fertilizers.",
+    "image": "https://i.ibb.co/DPXvDbbL/tip-2.jpg",
+    "category": "Composting",
+    "availability": "Public",
+    "totalLiked": 0
+  },
+  {
+    "title": "Use Companion Planting",
+    "topic": "Garden Planning",
+    "difficulty": "Medium",
+    "description": "Companion planting involves growing different plants together that benefit each other. For example, basil can repel pests from tomatoes, while marigolds deter nematodes in the soil. Thoughtful combinations can increase yields and reduce the need for pesticides.",
+    "image": "https://i.ibb.co/5X53N2V0/tip-3.jpg",
+    "category": "Plant Care",
+    "availability": "Public",
+    "totalLiked": 0
+  },
+  {
+    "title": "Start a Worm Bin",
+    "topic": "Vermicomposting",
+    "difficulty": "Medium",
+    "description": "Worm bins are an excellent way to break down organic waste and create 'black gold' for your garden. Red wigglers are the preferred species, and they convert scraps into castings rich in beneficial microbes. It's a great solution for small spaces or indoor composting.",
+    "image": "https://i.ibb.co/B23G2Qnx/tip-4.jpg",
+    "category": "Composting",
+    "availability": "Hidden",
+    "totalLiked": 0
+  },
+  {
+    "title": "Mulch to Retain Moisture",
+    "topic": "Soil Care",
+    "difficulty": "Easy",
+    "description": "Applying a layer of mulch around plants helps retain soil moisture, suppresses weeds, and regulates soil temperature. Organic mulches like straw, wood chips, or shredded leaves also decompose over time and improve soil quality.",
+    "image": "https://i.ibb.co/Fk7qDfLW/tip-5.jpg",
+    "category": "Soil Management",
+    "availability": "Public",
+    "totalLiked": 0
+  },
+  {
+    "title": "Create a Vertical Garden",
+    "topic": "Urban Gardening",
+    "difficulty": "Hard",
+    "description": "Limited on space? Vertical gardens use walls, trellises, or hanging structures to grow plants upward rather than outward. It’s perfect for small patios, balconies, or even indoor gardening. Ideal for herbs, leafy greens, and small vegetables.",
+    "image": "https://i.ibb.co/Y7Ww8PmZ/tip-6.jpg",
+    "category": "Vertical Gardening",
+    "availability": "Public",
+    "totalLiked": 0
+  },
+  {
+    "title": "Test Your Soil",
+    "topic": "Soil Testing",
+    "difficulty": "Medium",
+    "description": "Understanding your soil's pH and nutrient profile is essential before planting. Test kits are available at garden centers or online. Adjust the soil with lime or sulfur to balance pH, and amend it with compost or fertilizers as needed for optimal growth.",
+    "image": "https://i.ibb.co/DfcKf7VF/tip-7.jpg",
+    "category": "Soil Management",
+    "availability": "Hidden",
+    "totalLiked": 0
+  },
+  {
+    "title": "Protect Plants from Frost",
+    "topic": "Seasonal Gardening",
+    "difficulty": "Medium",
+    "description": "When temperatures drop, sensitive plants may suffer. Cover them with old blankets, cloches, or even upturned pots to keep the frost at bay. Mulching the roots adds an extra layer of insulation to preserve plant health during cold snaps.",
+    "image": "https://i.ibb.co/mrN2NsZw/tip-8.jpg",
+    "category": "Plant Protection",
+    "availability": "Public",
+    "totalLiked": 0
+  },
+  {
+    "title": "Use Natural Pest Deterrents",
+    "topic": "Pest Control",
+    "difficulty": "Medium",
+    "description": "Rather than harsh chemicals, try natural deterrents like neem oil, garlic spray, or diatomaceous earth to ward off pests. These alternatives are safer for pollinators, pets, and children while still being effective against common garden bugs.",
+    "image": "https://i.ibb.co/5X0Zf9xZ/tip-9.jpg",
+    "category": "Organic Gardening",
+    "availability": "Public",
+    "totalLiked": 0
+  },
+  {
+    "title": "Harvest at the Right Time",
+    "topic": "Harvesting",
+    "difficulty": "Easy",
+    "description": "Picking fruits and vegetables at their peak ripeness ensures the best flavor and encourages further production. Overripe produce left on the plant can attract pests or reduce yields. Learn the signs of ripeness for each crop you grow.",
+    "image": "https://i.ibb.co/xqDZ2JMG/tip-10.jpg",
+    "category": "Plant Care",
+    "availability": "Public",
+    "totalLiked": 0
+  }
+]

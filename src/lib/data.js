@@ -53,3 +53,9 @@ export const EVENT_SLIDES = [
     image: "/assets/slide-3.avif",
   },
 ];
+
+export const difficultyColor = {
+  Easy: "bg-primary/20 text-primary",
+  Medium: "bg-accent/20 text-accent",
+  Hard: "bg-danger/20 text-danger",
+};
