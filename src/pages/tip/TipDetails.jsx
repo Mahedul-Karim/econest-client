@@ -6,6 +6,8 @@ import React, { useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router";
 import { toast } from "sonner";
 import Heading from "./details/Heading";
+import Banner from "./details/Banner";
+import Details from "./details/Details";
 
 const TipDetails = () => {
   const { tipId } = useParams();
@@ -48,6 +50,12 @@ const TipDetails = () => {
           setTip={setTip}
           id={tip?._id}
           category={tip?.category}
+        />
+        <Banner src={tip?.image} />
+        <Details
+          topic={tip?.topic}
+          difficulty={tip?.difficulty}
+          description={tip?.description}
         />
       </Container>
     </ProtectedRoutes>

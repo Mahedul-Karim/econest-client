@@ -1,12 +1,31 @@
-# React + Vite
+<h3 align="center" >EcoNest</h3>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🔗 Live URL
 
-Currently, two official plugins are available:
+https://econest-client.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About EcoNest
 
-## Expanding the ESLint configuration
+EcoNest is a gardening community platform where people can create their profile and share their gardening tips accross all over the world.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+##  Key Features
+
+- People can create their account and share tips.
+- One can view other's tips and give a like if they liked them.
+- Viewers can filter according to the difficulty level of the tips.
+- A modern slider on home page.
+- Dark and Light Mode.
+- Reveal on scroll animation.
+
+
+
+##  NPM Packages Used
+
+- **React Js:** - Used react js js to create the whole application.
+- **Mongoose:** - For making interaction with database easier.
+- **ShadCN Ui:** - Used for prebuilt components.
+- **SwiperJS:** - For interactive slider on home page.
+- **React Awesome Reveal:** - For reveal on scroll animation.
+- **Lottie React:** - For lottie animation.
+- **Firebase:** - For authentication.

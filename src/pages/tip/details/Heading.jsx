@@ -21,9 +21,9 @@ const Heading = ({ title, totalLiked, setTip, id, category }) => {
   };
 
   return (
-    <header className="flex items-center justify-between">
+    <header className="flex items-center justify-between gap-2">
       <div className="space-y-2">
-        <h1 className="text-4xl font-semibold text-dark">{title}</h1>
+        <h1 className="text-xl xs:text-2xl sm:text-4xl font-semibold text-dark">{title}</h1>
         <Badge className="rounded-full text-white">{category}</Badge>
       </div>
       <div className="flex items-center">
