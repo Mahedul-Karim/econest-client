@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { difficultyColor } from "@/lib/data";
-import {  buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Eye } from "lucide-react";
 import { Link } from "react-router";
 
@@ -56,7 +56,10 @@ const TipsTables = ({ tips = [] }) => {
                   <div className="flex items-center justify-center gap-4">
                     <Link
                       to={`/tip/${tip?._id}`}
-                      className={`${buttonVariants({ variant: "ghost",className:"hover:bg-transparent group" })}`}
+                      className={`${buttonVariants({
+                        variant: "ghost",
+                        className: "hover:bg-transparent group",
+                      })}`}
                     >
                       <Eye className="size-6 group-hover:text-primary transition-all duration-300 group-hover:scale-[1.15] text-dark" />
                     </Link>
