@@ -10,6 +10,7 @@ import ShareTip from "@/pages/tip/ShareTip";
 import Gardeners from "@/pages/gardeners/Gardeners";
 import BrowseTips from "@/pages/tip/BrowseTips";
 import MyTips from "@/pages/tip/MyTips";
+import TipDetails from "@/pages/tip/TipDetails";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
         path: "/my-tips",
         element: <MyTips />,
       },
+      {
+        path:'/tip/:tipId',
+        element:<TipDetails />
+      }
     ],
   },
 ]);
