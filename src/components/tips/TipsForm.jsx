@@ -36,7 +36,13 @@ const reducer = (state, action) => {
   }
 };
 
-const TipsForm = ({ defaultValue, formType = "create" }) => {
+const TipsForm = ({
+  defaultValue,
+  formType = "create",
+  prevData = [],
+  updateTips,
+  setOpen,
+}) => {
   const { user } = useStore();
 
   const { callFetch } = useServer();
@@ -78,10 +84,25 @@ const TipsForm = ({ defaultValue, formType = "create" }) => {
         body: JSON.stringify(data),
       };
 
-      await callFetch(endpoint, options);
-      toast.success("Shared tip successfully!");
+      const res = await callFetch(endpoint, options);
 
-      dispatch({ type: "RESET_FIELD" });
+      if (formType === "create") {
+        toast.success("Shared tip successfully!");
+
+        dispatch({ type: "RESET_FIELD" });
+      } else {
+        const tipToUpdate = prevData?.findIndex(
+          (tip) => tip._id === defaultValue?._id
+        );
+
+        const newTips = [...prevData];
+
+        newTips[tipToUpdate] = res?.tip;
+
+        updateTips(newTips);
+        toast.success(res?.message);
+        setOpen(false);
+      }
     } catch (err) {
       toast.error(err.message);
     } finally {
